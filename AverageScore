@@ -1,0 +1,19 @@
+public double calculateAverage(List<Double> scores) {
+
+    if (scores == null || scores.isEmpty())
+
+        throw new IllegalArgumentException("Scores cannot be null or empty");
+
+    double total = 0;
+
+    for (double s : scores) {
+
+        if (s < 0 || s > 100)
+
+            throw new IllegalArgumentException("Invalid score: " + s);
+
+        total += s;
+    }
+
+    return total / scores.size();
+}
